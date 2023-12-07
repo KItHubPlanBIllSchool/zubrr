@@ -42,7 +42,7 @@
             {{$project->id}}
           </th>
           <td class="px-6 py-4 text-black">
-            {{$project->projectnames}}
+            {{$project->projectname}}
           </td>
           <td class="px-6 py-4 text-black">
             {{$project->start}} 
