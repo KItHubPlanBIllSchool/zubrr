@@ -1,3 +1,6 @@
+@extends('layout')
+@section('title', 'Registration')
+@section('content')
 <!doctype html>
 <html>
 <head>
@@ -116,6 +119,7 @@
    <p>{{$message}}</p>
    @enderror
   </form>
+  
         
 
   </div>
@@ -131,3 +135,4 @@
   <a  href="{{ route('export_user_pdf') }}"><button>make a pdf</button></a>
 </body>     
 </html>
+@endsection 

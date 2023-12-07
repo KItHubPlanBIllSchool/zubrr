@@ -41,7 +41,7 @@ class ProjectController extends Controller
         ]);
 
         Excel::import(new ProjectsImport, $request->file('excel_file'));
-        return redirect()->back()-with('success', 'Users Succesfully imported');
+        return redirect()->back()->with('success', 'Users Succesfully imported');
     }
     public function export_user_pdf(){
         $pdf = PDF::loadView('pdf.projects');

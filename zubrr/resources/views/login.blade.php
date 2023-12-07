@@ -1,4 +1,6 @@
-
+@extends('layout')
+@section('title', 'login')
+@section('content')
     <div>
     @if($errors->any())
         <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
@@ -34,7 +36,7 @@
   </div>
 </div>
    @endif
-        <form action="{{route('login.post')}}" method="POST" Sclass="max-w-sm mx-auto">
+        <form action="{{route('login.post')}}" method="POST" class="max-w-sm mx-auto">
         @csrf
         <div class="mb-5">
             <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your name</label>
@@ -48,3 +50,4 @@
         <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
         </form>
     </div>
+@endsection

@@ -26,7 +26,8 @@ Route::post('/registration', [AuthManager::class, 'registrationpost'])->name('re
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 Route::post('/createproject', [AuthManager::class, 'registrationpost'])->name('registration.post');
 Route::post('import_user', [ProjectController::class, 'import_user'])->name('import_user');    
-Route::get('export_user_pdf', [ProjectController::class, 'export_user_pdf'])->name('export_user_pdf');    
+Route::get('export_user_pdf', [ProjectController::class, 'export_user_pdf'])->name('export_user_pdf');   
+Route::get('im', [ProjectController::class, 'export_user_pdf'])->name('export_user_pdf');     
 
 
 Route::get('/projects', function () {

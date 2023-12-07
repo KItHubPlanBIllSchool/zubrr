@@ -18,7 +18,7 @@ class ProjectsImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Projects([
-            'projectnames' => $row['projectnames'],
+            'projectname' => $row['projectnames'],
             'start' => Date::excelToDateTimeObject($row['start'])->format('Y-m-d H:i:s'),
             'end' => Date::excelToDateTimeObject($row['end'])->format('Y-m-d H:i:s'),
             'desc' => $row['desc'],
