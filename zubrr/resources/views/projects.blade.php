@@ -9,9 +9,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <h1>tvoyid: {{auth()->user()->id}}</h1>
-  <h1>projectN:{{auth()->user()->projectn}}</h1>
-  <h1>ProjectDescription:{{auth()->user()->projecttarget}}</h1>
+  <p>tvoyid: {{auth()->user()->id}}</p>
+  <p>projectN:{{auth()->user()->projectn}}</p>
+  <p>ProjectDescription:{{auth()->user()->projecttarget}}</p>
 
   <div class="relative overflow-x-auto">
     

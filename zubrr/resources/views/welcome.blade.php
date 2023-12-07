@@ -1,1 +1,1 @@
-<h1 class="text-6xl">hoi</h1>
+<h1 class="text-6xl">уведомление направлено</h1>
