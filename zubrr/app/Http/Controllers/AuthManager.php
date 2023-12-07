@@ -8,16 +8,17 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\DB;
 class AuthManager extends Controller
 {
+
     function login(){
         if(Auth::check()){
-            return redirect(route('projects'));
+            return redirect(route('projects.list'));
         }
         return view('login');
     }
 
     function registration(){
         if(Auth::check()){
-            return redirect(route('projects'));
+            return redirect(route('projects.list'));
         }
         return view('registration');
     }
@@ -28,7 +29,7 @@ class AuthManager extends Controller
         ]);
         $credentials = $request->only('name', 'password');
         if(Auth::attempt($credentials)){
-            return redirect()->intended(route('projects'));
+            return redirect()->intended(route('projects.list'));
         }
         return redirect(route('login'))->with("error", "Login details are not valid");
     }

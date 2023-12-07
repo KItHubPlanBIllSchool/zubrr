@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('password');
             $table->string('projectn');
             $table->string('projecttarget');
+            $table->boolean('isgood')->default('0');
             $table->string('email')->unique();
+            $table->boolean('is_admin')->default(0);
         });
     }
 

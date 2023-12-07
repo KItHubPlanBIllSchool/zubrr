@@ -1,1 +1,1 @@
-welcome 
+<h1 class="text-6xl">hoi</h1>

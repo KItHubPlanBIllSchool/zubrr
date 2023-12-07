@@ -4,9 +4,11 @@ namespace App\Imports;
 
 use App\Models\Projects;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
 
-class ProjectsImport implements ToModel
+
+class ProjectsImport implements ToModel, WithHeadingRow
 {
     /**
     * @param array $row
@@ -16,12 +18,19 @@ class ProjectsImport implements ToModel
     public function model(array $row)
     {
         return new Projects([
-            'id' => $row[0],
-            'projectname' => $row[1],
-            'start' => Date::excelToDateTimeObject($row[2])->format('Y-m-d H:i:s'),
-            'end' => Date::excelToDateTimeObject($row[3])->format('Y-m-d H:i:s'),
-            'desc' => $row[4],
-            'user_id' => $row[5],
+            'projectnames' => $row['projectnames'],
+            'start' => Date::excelToDateTimeObject($row['start'])->format('Y-m-d H:i:s'),
+            'end' => Date::excelToDateTimeObject($row['end'])->format('Y-m-d H:i:s'),
+            'desc' => $row['desc'],
+            'user_id' => $row['user_id'],
+            'state' => $row['state'],
+            'kv1' => $row['kv1'],
+            'kv2' => $row['kv2'],
+            'kv3' => $row['kv3'],
+            'kv4' => $row['kv4'],
+        
+
+
         ]);
     }
 }

@@ -19,7 +19,6 @@ use App\Models\Projects;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/projects', [ProjectController::class, 'list'])->name('projects');
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
 Route::post('/login', [AuthManager::class, 'loginpost'])->name('login.post');
 Route::get('/registration', [AuthManager::class, 'registration'])->name('registration');
@@ -27,3 +26,23 @@ Route::post('/registration', [AuthManager::class, 'registrationpost'])->name('re
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 Route::post('/createproject', [AuthManager::class, 'registrationpost'])->name('registration.post');
 Route::post('import_user', [ProjectController::class, 'import_user'])->name('import_user');    
+Route::get('export_user_pdf', [ProjectController::class, 'export_user_pdf'])->name('export_user_pdf');    
+
+
+Route::get('/projects', function () {
+    $user = Auth::user();
+
+    if ($user->is_admin) {
+        // Admin dashboard
+        return redirect()->route('adminprojects');
+    } else {
+        // Regular user dashboard
+        return redirect()->route('projects.list');
+    }
+})->name('projects');
+
+Route::get('/projects', [ProjectController::class, 'list'])->name('projects.list');
+
+
+
+

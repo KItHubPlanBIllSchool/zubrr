@@ -34,7 +34,7 @@
   </div>
 </div>
    @endif
-        <form action="{{route('login.post')}}" method="POST" class="max-w-sm mx-auto">
+        <form action="{{route('login.post')}}" method="POST" Sclass="max-w-sm mx-auto">
         @csrf
         <div class="mb-5">
             <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your name</label>

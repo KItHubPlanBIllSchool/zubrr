@@ -7,12 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Projects extends Model
 {
     protected $fillable = [
-        'projectname',
+        'projectnames',
         'start',
         'end',
         'desc',
-        'isapproved',
         'user_id',
+        'state',
+        'kv1',
+        'kv2',
+        'kv3',
+        'kv4',
+    
     ];
 
     public function users()

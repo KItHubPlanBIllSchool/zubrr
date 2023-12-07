@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('projectname');
+            $table->string('projectnames');
             $table->datetime('start');
             $table->datetime('end');
             $table->string('desc');
-            $table->boolean('isapproved')->nullable();
             $table->integer('user_id');
+            $table->string('state');
+            $table->integer('kv1');
+            $table->integer('kv2');
+            $table->integer('kv3');
+            $table->integer('kv4');
 
         });
     }
